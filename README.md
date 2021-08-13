@@ -45,4 +45,4 @@ echo 'awsenv() { eval "$('$AWSENV_PATH' $@)" }' >> ~/.zshrc
 
 2. Once `awsenv` sets the AWS credentials environment for you. You don't need to append `--profile` option to the AWS CLI commands anymore. The AWS CLI will use the profile set with the `AWS_PROFILE` variable.
 
-3. Feel free to enchance the script for other variables like `AWS_SESSION_TOKEN`
+3. Feel free to enhance the script for other variables like `AWS_SESSION_TOKEN`
