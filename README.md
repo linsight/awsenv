@@ -1,4 +1,5 @@
 # awsenv
+
 A simple bash script/command for managing AWS environment credentials.
 
 ## Features:
@@ -13,13 +14,11 @@ A simple bash script/command for managing AWS environment credentials.
    - `AWS_DEFAULT_REGION`
    - `AWS_ACCESS_KEY_ID`
    - `AWS_SECRET_ACCESS_KEY`
- 
-## Prerequisite 
+
+## Prerequisite
 
 - Linux or Mac OS
 - Install AWS Cli
-
-
 
 ## Installation
 
@@ -27,7 +26,7 @@ You can download the `awsenv` script to the a `/bin` directory of your choice. F
 
 ```
 AWSENV_PATH=/usr/local/bin/awsenv
-curl -o $AWSENV_PATH https://raw.githubusercontent.com/linsight/awsenv/main/awsenv 
+curl -o $AWSENV_PATH https://raw.githubusercontent.com/linsight/awsenv/main/awsenv
 chmod +x $AWSENV_PATH
 echo 'awsenv() { eval "$('$AWSENV_PATH' $@)" }' >> ~/.zshrc
 ```
@@ -42,6 +41,8 @@ echo 'awsenv() { eval "$('$AWSENV_PATH' $@)" }' >> ~/.zshrc
 
 ## What's next
 
-1. `awsenv` manages AWS credentials environment variables in your current shell session. This means that if you start a new terminal, the new terminal is likely to have no AWS credentials environment or a different AWS credentials environment from the one you are working on. To avoid confusion. It is recommended to `AWS_ACCESS_KEY_ID` and  `AWS_SECRET_ACCESS_KEY` environment variables from your start-up script (e.g. `~/.zshrc`). You can keep the `AWS_PROFILE` and `AWS_REGION`. When you run `awsenv`, it will create the `AWS_ACCESS_KEY_ID` and  `AWS_SECRET_ACCESS_KEY` environment variables for your current shell session based on the `AWS_PROFILE`. If `AWS_PROFILE` is not available, you will be asked to run `awsenv use <profile>`.
+1. `awsenv` manages AWS credentials environment variables in your current shell session. This means that if you start a new terminal, the new terminal is likely to have no AWS credentials environment or a different AWS credentials environment from the one you are working on. To avoid confusion. It is recommended to `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` environment variables from your start-up script (e.g. `~/.zshrc`). You can keep the `AWS_PROFILE` and `AWS_REGION`. When you run `awsenv`, it will create the `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` environment variables for your current shell session based on the `AWS_PROFILE`. If `AWS_PROFILE` is not available, you will be asked to run `awsenv use <profile>`.
 
 2. Once `awsenv` sets the AWS credentials environment for you. You don't need to append `--profile` option to the AWS CLI commands anymore. The AWS CLI will use the profile set with the `AWS_PROFILE` variable.
+
+3. Feel free to enchance the script for other variables like `AWS_SESSION_TOKEN`
